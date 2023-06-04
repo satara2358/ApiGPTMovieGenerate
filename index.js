@@ -15,7 +15,7 @@ document.getElementById("send-btn").addEventListener("click", () => {
   if (setupTextarea.value) {
     const userInput = setupTextarea.value
     setupInputContainer.innerHTML = `<img src="images/loading.svg" class="loading" id="loading">`
-    movieBossText.innerText = `Ok, just wait a second while my digital brain digests that...`
+    movieBossText.innerText = `Ok, solo espera un segundo mientras mi cerebro digital digiere eso...`
     fetchBotReply(userInput)
     fetchSynopsis(userInput)
   }
@@ -38,7 +38,7 @@ async function fetchBotReply(outline) {
     outline: ${outline}
     message: 
     `,
-    max_tokens: 60 
+    max_tokens: 60
   })
   movieBossText.innerText = response.data.choices[0].text.trim()
 } 
@@ -125,6 +125,6 @@ async function fetchImageUrl(imagePrompt){
   document.getElementById('view-pitch-btn').addEventListener('click', ()=>{
     document.getElementById('setup-container').style.display = 'none'
     document.getElementById('output-container').style.display = 'flex'
-    movieBossText.innerText = `This idea is so good I'm jealous! It's gonna make you rich for sure! Remember, I want 10% 💰`
+    movieBossText.innerText = `¡Esta idea es tan buena que estoy celoso! ¡Te hará rico seguro! Recuerda, quiero el 10% 💰`
   })
 }
